@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_columnSpan="2"
+            android:text="PERMANENT - Save data to filesystem using preferences, useful for program settingsSee doSavePref() in code" />
+
+        <TextView
+            android:id="@+id/TextViewPrefLoc"
+            android:layout_columnSpan="2"
+            android:text="Pref loc=?"
+            android:textColor="@android:color/holo_purple" />
+
+        <TextView
+            android:text="Password:"
+            android:textColor="@android:color/holo_purple" />
+
+        <EditText
+            android:id="@+id/EditTextPwd"
+            android:layout_width="match_parent"
+            android:layout_gravity="left" />
+
+<!--        <TextView android:text="" />-->
+
+        <Button
+            android:id="@+id/bSave"
+            android:onClick="doSavePref"
+            android:text="save to preference file" />
+        <Button
+            android:id="@+id/bGet"
+            android:onClick="doGetPref"
+            android:text="get from preference file" />
+
+    </GridLayout>
+</ScrollView>
