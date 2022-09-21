@@ -1,7 +1,6 @@
 package com.example.serialization;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,8 +13,8 @@ import java.io.File;
 public class MainActivity extends Activity {
 	private static final String TAG = "Serialization_preferences";
 	private static final String PREF_FILE_NAME="PrefFile";
-	private static final String PASSWORD="Password";
-	private static final String DEFAULT_PWD = "Default";
+	private static final String USER_ID ="keith.perkins";
+	private static final String DEFAULT_USER_ID = "Default";
 	
 	EditText editTextPwd;
 	TextView TextViewPrefLoc;
@@ -27,7 +26,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		editTextPwd = (EditText)findViewById(R.id.EditTextPwd);
+		editTextPwd = (EditText)findViewById(R.id.EditTextUserid);
 		TextViewPrefLoc = (TextView)findViewById(R.id.TextViewPrefLoc);
 
 		//SHAREDPREFERENCES - PERMANENT STORAGE
@@ -43,7 +42,7 @@ public class MainActivity extends Activity {
 			TextViewPrefLoc.setText("Pref loc="+ f.getAbsolutePath());
 
 		//populate with what is there
-		doGetPref(null);
+//		doGetPref(null);
 	}
 	
 	public void doSavePref(View v) {
@@ -52,7 +51,7 @@ public class MainActivity extends Activity {
 
 		// slap something in it, strings, bools nts, check the docs
 		String myString = editTextPwd.getText().toString();
-		editor.putString(PASSWORD, myString);
+		editor.putString(USER_ID, myString);
 
 		// Commit the edits! You dont call this it aint saved!
 		editor.commit();
@@ -60,7 +59,7 @@ public class MainActivity extends Activity {
 
 	public void doGetPref(View view) {
 		//get from pref file
-		String savedPwd = settings.getString(PASSWORD, DEFAULT_PWD);
+		String savedPwd = settings.getString(USER_ID, DEFAULT_USER_ID);
 		editTextPwd.setText(savedPwd);
 	}
 
