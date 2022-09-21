@@ -33,7 +33,8 @@ public class MainActivity extends Activity {
 		//SHAREDPREFERENCES - PERMANENT STORAGE
 		// get a handle to PREF_FILE_NAME, create if necessary, only this
 		// process has access can have MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE. See docs
-		settings = getSharedPreferences(PREF_FILE_NAME,MODE_PRIVATE);
+		if (settings == null)
+			settings = getSharedPreferences(PREF_FILE_NAME, MODE_PRIVATE);
 
 		//note location of preference file if possible
 		File f = getDatabasePath(PREF_FILE_NAME +".xml");
@@ -46,9 +47,6 @@ public class MainActivity extends Activity {
 	}
 	
 	public void doSavePref(View v) {
-		if(settings == null)
-			settings = getSharedPreferences(PREF_FILE_NAME,MODE_PRIVATE);
-
 		// can only make changes with editor
 		SharedPreferences.Editor editor = settings.edit();
 
@@ -61,9 +59,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void doGetPref(View view) {
-		if(settings == null)
-			settings = getSharedPreferences(PREF_FILE_NAME,MODE_PRIVATE);
-
 		//get from pref file
 		String savedPwd = settings.getString(PASSWORD, DEFAULT_PWD);
 		editTextPwd.setText(savedPwd);

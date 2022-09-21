@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Serialization_preferences.iml" filepath="$PROJECT_DIR$/Serialization_preferences.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Serialization_preferences.app.unitTest.iml" />
     </modules>
   </component>
 </project>
